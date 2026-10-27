@@ -1,0 +1,91 @@
+[0m11:01:10.786676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F3C1867B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F39F54F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F3EDCB890>]}
+
+
+============================== 11:01:10.817518 | 0d55bdbb-b4b5-4891-b3eb-fa5ad3506a02 ==============================
+[0m11:01:10.817518 [info ] [MainThread]: Running with dbt=1.13.0-b1
+[0m11:01:10.819260 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\arvarela\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt init', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m11:01:10.821198 [debug] [MainThread]: Tracking: tracking
+[0m11:01:10.886661 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\arvarela\.dbt
+[0m11:01:30.499442 [debug] [MainThread]: Starter project path: C:\Users\arvarela\OneDrive - Apex Systems\Documents\GitHub\snowflake-dbt-academy\.venv\Lib\site-packages\dbt\include\starter_project
+[0m11:01:30.544148 [info ] [MainThread]: Setting up your profile.
+[0m11:01:39.771048 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:01:39.771457 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:01:39.771681 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:04:24.753736 [info ] [MainThread]: Profile snowflake_dtb_academy written to C:\Users\arvarela\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m11:04:24.759654 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m11:04:24.760638 [info ] [MainThread]: dbt version: 1.13.0-b1
+[0m11:04:24.761153 [info ] [MainThread]: python version: 3.14.7
+[0m11:04:24.761466 [info ] [MainThread]: python path: C:\Users\arvarela\OneDrive - Apex Systems\Documents\GitHub\snowflake-dbt-academy\.venv\Scripts\python.exe
+[0m11:04:24.761761 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m11:04:24.816046 [info ] [MainThread]: Using profiles dir at C:\Users\arvarela\.dbt
+[0m11:04:24.816805 [info ] [MainThread]: Using profiles.yml file at C:\Users\arvarela\.dbt\profiles.yml
+[0m11:04:24.817299 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\arvarela\OneDrive - Apex Systems\Documents\GitHub\snowflake-dbt-academy\snowflake_dtb_academy\dbt_project.yml
+[0m11:04:24.818734 [info ] [MainThread]: adapter type: snowflake
+[0m11:04:24.819248 [info ] [MainThread]: adapter version: 1.12.4
+[0m11:04:24.904068 [info ] [MainThread]: Configuration:
+[0m11:04:24.904861 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:04:24.905307 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:04:24.905939 [info ] [MainThread]: Required dependencies:
+[0m11:04:24.906756 [debug] [MainThread]: Executing "git --help"
+[0m11:04:24.911307 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m11:04:24.911833 [info ] [MainThread]: Connection:
+[0m11:04:24.912266 [info ] [MainThread]:   account: RTCMWZJ-NTB47113
+[0m11:04:24.912751 [info ] [MainThread]:   user: ARVARELA
+[0m11:04:24.913050 [info ] [MainThread]:   database: ANALYTICS
+[0m11:04:24.913276 [info ] [MainThread]:   warehouse: TRAINING_WH
+[0m11:04:24.913486 [info ] [MainThread]:   role: TRAINING_ROLE
+[0m11:04:24.913745 [info ] [MainThread]:   schema: STAGING
+[0m11:04:24.913963 [info ] [MainThread]:   authenticator: None
+[0m11:04:24.914160 [info ] [MainThread]:   oauth_client_id: None
+[0m11:04:24.914355 [info ] [MainThread]:   query_tag: None
+[0m11:04:24.914563 [info ] [MainThread]:   client_session_keep_alive: False
+[0m11:04:24.914763 [info ] [MainThread]:   host: None
+[0m11:04:24.914975 [info ] [MainThread]:   port: None
+[0m11:04:24.915177 [info ] [MainThread]:   proxy_host: None
+[0m11:04:24.915368 [info ] [MainThread]:   proxy_port: None
+[0m11:04:24.915561 [info ] [MainThread]:   protocol: None
+[0m11:04:24.915752 [info ] [MainThread]:   connect_retries: 1
+[0m11:04:24.915942 [info ] [MainThread]:   connect_timeout: None
+[0m11:04:24.916149 [info ] [MainThread]:   retry_on_database_errors: False
+[0m11:04:24.916363 [info ] [MainThread]:   retry_all: False
+[0m11:04:24.916573 [info ] [MainThread]:   insecure_mode: False
+[0m11:04:24.916769 [info ] [MainThread]:   reuse_connections: True
+[0m11:04:24.916966 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m11:04:24.917196 [info ] [MainThread]:   workload_identity_provider: None
+[0m11:04:24.917512 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m11:04:24.917763 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m11:04:24.918204 [info ] [MainThread]: Registered adapter: snowflake=1.12.4
+[0m11:04:25.451334 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m11:04:25.453870 [debug] [MainThread]: Using snowflake connection "debug"
+[0m11:04:25.454221 [debug] [MainThread]: On debug: select 1 as id
+[0m11:04:25.454439 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:04:27.324834 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.870 seconds
+[0m11:04:27.325623 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:04:27.325970 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:04:27.326272 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH and that the user has permissions to run it: "git"
+
+[0m11:04:27.326569 [info ] [MainThread]: Your new dbt project "snowflake_dtb_academy" was created!
+Initialized new project in C:\Users\arvarela\OneDrive - Apex Systems\Documents\GitHub\snowflake-dbt-academy\snowflake_dtb_academy\snowflake_dtb_academy
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:04:27.326831 [info ] [MainThread]: [31mYour profile may need adjustments. You can find the logs of `dbt debug` above[0m
+[0m11:04:27.327750 [debug] [MainThread]: Command `dbt init` succeeded at 11:04:27.327663 after 197.07 seconds
+[0m11:04:27.327990 [debug] [MainThread]: Connection 'debug' was left open.
+[0m11:04:27.328169 [debug] [MainThread]: On debug: Close
+[0m11:04:27.653278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F3EC56EA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F40AD72F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025F40A82F10>]}
+[0m11:04:27.653801 [debug] [MainThread]: Flushing usage events
+[0m11:04:28.154024 [debug] [MainThread]: An error was encountered while trying to flush usage events
