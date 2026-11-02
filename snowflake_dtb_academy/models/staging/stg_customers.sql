@@ -4,16 +4,26 @@ with source_data as (
     from 
         {{ source('raw_data', 'customers') }}
 ),
+country_map as (
+    select
+        *
+    from
+        {{ ref('country_mapping') }}
+),
 cleaned as (
     select
-        customer_id,
-        trim(upper(first_name)) as first_name,
-        trim(upper(last_name)) as last_name,
-        trim(lower(email)) as email,
-        coalesce(trim(phone), 'n/a') as phone_number,
+        s.customer_id::integer as customer_id,
+        trim(upper(s.first_name)) as first_name,
+        trim(upper(s.last_name)) as last_name,
+        trim(lower(s.email)) as email,
+        coalesce(trim(s.phone), 'N/A') as phone_number,
+        trim(upper(s.country)) as country,
+        coalesce(cm.country_code, trim(upper(s.country))) as country_code,
         created_at::timestamp_ntz as created_at
     from 
-        source_data
+        source_data s
+    left join country_map cm
+        on trim(upper(s.country)) = trim(upper(cm.country_raw))
     where
         created_at is not null
         and email is not null
