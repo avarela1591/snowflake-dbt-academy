@@ -4,21 +4,23 @@ with source_data as (
     from 
         {{ source('raw_data', 'payments') }}
 ),
+payment_method_map as (
+    select
+        *
+    from
+        {{ ref('payment_method') }}
+),
 cleaned as (
     select
-        payment_id::integer as payment_id,
-        order_id::integer as order_id,
-        CASE
-            WHEN payment_method IN ('credit_card', 'cc', 'visa', 'mastercard', 'amex') THEN 'credit_card'
-            WHEN payment_method IN ('bank_transfer', 'wire', 'ach') THEN 'bank_transfer'
-            WHEN payment_method IN ('paypal', 'venmo') THEN 'digital_wallet'
-            WHEN payment_method = 'gift_card' THEN 'gift_card'
-            ELSE 'other' 
-        END as payment_method,
-        amount::decimal(10, 2) as payment_amount,
-        lower(trim(status)) as payment_status
+        s.payment_id::integer as payment_id,
+        s.order_id::integer as order_id,
+        coalesce(trim(s.payment_method), trim(pmm.payment_method_clean)) as payment_method,
+        s.amount::decimal(10, 2) as payment_amount,
+        lower(trim(s.status)) as payment_status
     from 
-        source_data
+        source_data s
+    left join payment_method_map pmm
+        on lower(trim(s.payment_method)) = lower(trim(pmm.payment_method))
 )
 select 
     *   
