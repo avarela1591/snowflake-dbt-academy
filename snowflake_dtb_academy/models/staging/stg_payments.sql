@@ -14,7 +14,7 @@ cleaned as (
     select
         s.payment_id::integer as payment_id,
         s.order_id::integer as order_id,
-        coalesce(trim(s.payment_method), trim(pmm.payment_method_clean)) as payment_method,
+        coalesce(trim(pmm.payment_method_clean), 'other') as payment_method,
         s.amount::decimal(10, 2) as payment_amount,
         lower(trim(s.status)) as payment_status
     from 
